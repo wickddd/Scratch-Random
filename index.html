@@ -1,25 +1,180 @@
-
-
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skbidi</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
-  <div class='topbar'>
-    <img id='authorpfp' class='ap'></img>
-    <h2 id="title">Title</h2>
- 
-  </div>
-    
 
-    <div class="box">
-        <img id="imagebox" onclick="OpenGame()">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>random scratch</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1c1c1c;
+      color: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 47%;
+      max-width: 1000px;
+      background-color: #282828;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .header img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      color: #f3f3f3;
+    }
+
+    .header span {
+      color: #a0a0a0;
+      font-size: 12px;
+    }
+
+    .main-content {
+      display: flex;
+      gap: 20px;
+    }
+
+    .left-panel {
+      flex: 2;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .control-button {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+
+    .play {
+      background-color: green;
+    }
+
+    .stop {
+      background-color: red;
+    }
+
+    .display-area {
+      background-color: #333;
+      height: 90%;
+      width: 100%;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .display-area img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .right-sidebar {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sidebar-section {
+      background-color: #2c2c2c;
+      border-radius: 8px;
+      padding: 10px;
+      height: 140px;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      font-size: 12px;
+      color: #a0a0a0;
+    }
+
+    .footer-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .footer-icons span {
+      cursor: pointer;
+    }
+
+    .copy-link {
+      background-color: #6b48ff;
+      padding: 5px 10px;
+      border-radius: 4px;
+      color: white;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header">
+      <img id="ap" src="https://via.placeholder.com/40">
+      <div>
+        <h1 id="title">click the red to start</h1>
+        <span id="creator">green to open project</span>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="left-panel">
+        <div class="controls">
+          <div class="control-button play" onclick="OpenGame()"></div>
+          <div class="control-button stop" onclick="buttonclick()"></div>
+        </div>
+        <div class="display-area">
+          <img id="projecthumb" src="https://via.placeholder.com/250">
+        </div>
+      </div>
     </div>
 
-    <button onClick="buttonclick()">Random Scratch Project</button>
+    <div class="footer">
+      <div class="footer-icons">
+        <span id="loves">❤️ null</span>
+        <span id="stars">⭐ null</span>
+        <span id="remixes">🔄 null</span>
+        <span id="views">👁️ null</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
