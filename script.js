@@ -1,6 +1,13 @@
-const imagebox = document.getElementById("imagebox");
+const imagebox = document.getElementById("projecthumb");
 const title = document.getElementById("title");
-const authpfp = document.getElementById('authorpfp');
+const authpfp = document.getElementById('ap');
+const creator = document.getElementById('creator');
+
+const loves = document.getElementById('loves');
+const stars = document.getElementById('stars');
+const remixes = document.getElementById('remixes');
+const views = document.getElementById('views');
+
 let game = null;
 
 function randomnum(min, max) {
@@ -25,9 +32,15 @@ async function buttonclick() {
     if (!data.code) {
       imagebox.src = data.image;
       title.innerText = data.title;
-      authpfp.src = data.author.profile.images['50x50']
-      
-      game = random
+      authpfp.src = data.author.profile.images['50x50'];
+      creator.innerText = 'by ' + data.author.username;
+
+      views.innerText = '👁️ ' + data.stats.views
+      loves.innerText = '❤️ ' + data.stats.loves
+      stars.innerText = '⭐ ' + data.stats.favorites
+      remixes.innerText = '🔄 ' + data.stats.remixes
+
+      game = random;
       break;
     }
   }
